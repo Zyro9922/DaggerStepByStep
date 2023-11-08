@@ -8,15 +8,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /**
-         * The purpose of UserRegistrationService should only
-         * be to register user.
-         * Not create EmailService and UserRepository objects
-         */
-        val emailService = EmailService()
-        val userRepository = UserRepository()
-
-        val userRegistrationService = UserRegistrationService(emailService, userRepository)
-        userRegistrationService.registerUser("test@gmail.com", "test@1234")
+        val daggerUserRegistrationComponent = DaggerUserRegistrationComponent.builder().build()
+        daggerUserRegistrationComponent.getUserRegistrationService().registerUser("test@gmail.com", "test@1234")
     }
 }
