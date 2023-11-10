@@ -13,4 +13,4 @@ annotation class MessageQualifier()
 @Qualifier
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-annotation class NotificationQualifier()
+annotation class EmailQualifier()
