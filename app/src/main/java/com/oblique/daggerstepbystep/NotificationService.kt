@@ -8,7 +8,7 @@ import javax.inject.Singleton
 interface NotificationService {
     fun send(user_email: String, email_body: String)
 }
-@Singleton
+@ApplicationScope
 class EmailService @Inject constructor() : NotificationService{
     override fun send(user_email: String, email_body: String){
         Log.d(AppLogger.TAG, "${this.javaClass.simpleName}: EmailService.send - Email sent successfully User Email: $user_email Email Body $email_body")
