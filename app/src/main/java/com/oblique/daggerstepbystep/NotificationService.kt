@@ -3,11 +3,12 @@ package com.oblique.daggerstepbystep
 import android.util.Log
 import com.oblique.daggerstepbystep.utils.AppLogger
 import javax.inject.Inject
+import javax.inject.Singleton
 
 interface NotificationService {
     fun send(user_email: String, email_body: String)
 }
-
+@Singleton
 class EmailService @Inject constructor() : NotificationService{
     override fun send(user_email: String, email_body: String){
         Log.d(AppLogger.TAG, "${this.javaClass.simpleName}: EmailService.send - Email sent successfully User Email: $user_email Email Body $email_body")
