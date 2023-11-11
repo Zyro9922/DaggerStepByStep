@@ -7,4 +7,6 @@ import javax.inject.Singleton
 @Component(modules = [NotificationServiceModule::class])
 interface UserRegistrationComponent {
     fun inject(mainActivity: MainActivity)
+
+    fun getEmailService() : EmailService
 }
